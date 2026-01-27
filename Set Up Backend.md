@@ -58,10 +58,14 @@ Buka file `tsconfig.json`, lalu **uncomment dan pastikan** konfigurasi berikut a
 
 ```json
 {
-  "rootDir": "./src",
-  "outDir": "./dist",
-  "esModuleInterop": true,
-  "strict": true
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true,
+    "strict": true,
+    "skipLibCheck": true
+  }
 }
 ```
 
@@ -95,11 +99,15 @@ Artinya:
 Tambahkan script berikut pada bagian `"scripts"`:
 
 ```json
-"scripts": {
-  "dev": "nodemon",
-  "build": "tsc",
-  "start": "node dist/index.js"
+{
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon --exec node --loader ts-node/esm src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  }
 }
+
 
 ```
 
