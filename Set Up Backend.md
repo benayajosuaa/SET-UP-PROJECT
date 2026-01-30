@@ -58,60 +58,43 @@ Buka file `tsconfig.json`, lalu **uncomment dan pastikan** konfigurasi berikut a
 
 ```json
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    // File Layout
-    "rootDir": ".",
+    /* ================== BASIC ================== */
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+
+    /* ================== PATH ================== */
+    "rootDir": "./src",
     "outDir": "./dist",
 
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    "target": "esnext",
-    "moduleResolution": "nodenext",
-    "types": [],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
-
-    // Other Outputs
-    "sourceMap": true,
-    "declaration": true,
-    "declarationMap": true,
-
-    // Stricter Typechecking Options
-    "noUncheckedIndexedAccess": true,
-    "exactOptionalPropertyTypes": true,
-
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
-
-    // Recommended Options
-    "strict": true,
-    "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
-    "noUncheckedSideEffectImports": true,
-    "moduleDetection": "force",
-    "skipLibCheck": true,
+    /* ================== NODE ================== */
+    "types": ["node"],
     "esModuleInterop": true,
+
+    /* ================== OUTPUT ================== */
+    "sourceMap": true,
+
+    /* ================== TYPE SAFETY ================== */
+    "strict": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+
+    /* ================== QUALITY OF LIFE ================== */
+    "resolveJsonModule": true,
+    "isolatedModules": true
   },
-  "include": ["src/**/*", "prisma/client/**/*.ts"],
+
+  "include": [
+    "src/**/*"
+  ],
+
   "exclude": [
     "node_modules",
     "dist",
-    "prisma.config.ts",
-
-  ],
-  "allowImportingTsExtensions": true
+    "prisma.config.ts"
+  ]
 }
-
 ```
 
 Penjelasan singkat:
