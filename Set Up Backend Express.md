@@ -112,7 +112,7 @@ Buat file `nodemon.json` di root project, lalu isi dengan:
 {
   "watch": ["src"],
   "ext": "ts",
-  "exec": "ts-node src/index.ts"
+  "exec": "node --loader ts-node/esm src/index.ts"
 }
 
 ```
